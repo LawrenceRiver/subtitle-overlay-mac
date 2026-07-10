@@ -4,7 +4,7 @@
 
 **Goal:** Build and package a native macOS app that displays a black, always-on-top, draggable and resizable subtitle-blocking window.
 
-**Architecture:** A small Swift Package executable will contain a pure geometry helper, an AppKit application delegate, a custom borderless overlay window, and a custom overlay view with hover-close behavior. A packaging script will place the release executable and Info.plist into a double-clickable `.app` bundle.
+**Architecture:** A small Swift Package will contain an `OverlayCore` library for pure geometry calculations, an AppKit executable for the application delegate, custom borderless overlay window, and hover-close view, plus XCTest coverage for the reusable geometry. A packaging script will place the release executable and Info.plist into a double-clickable `.app` bundle.
 
 **Tech Stack:** Swift 6.3, Swift Package Manager, AppKit, XCTest, macOS 13+ deployment target, arm64 release build.
 
@@ -24,15 +24,15 @@
 
 **Files:**
 - Create: `/Users/lawrenceriver/Documents/Codex/2026-07-10/new-chat/Package.swift`
-- Create: `/Users/lawrenceriver/Documents/Codex/2026-07-10/new-chat/Sources/SubtitleOverlay/OverlayGeometry.swift`
+- Create: `/Users/lawrenceriver/Documents/Codex/2026-07-10/new-chat/Sources/OverlayCore/OverlayGeometry.swift`
 - Create: `/Users/lawrenceriver/Documents/Codex/2026-07-10/new-chat/Tests/SubtitleOverlayTests/OverlayGeometryTests.swift`
 
 **Interfaces:**
-- Produces `OverlayGeometry.initialFrame(in:) -> CGRect` and `OverlayGeometry.clampedFrame(_:to:minimumSize:) -> CGRect` for the AppKit layer and tests.
+- Produces `OverlayGeometry.initialFrame(in:) -> CGRect` and `OverlayGeometry.clampedFrame(_:to:minimumSize:) -> CGRect` from the `OverlayCore` library for the AppKit layer and tests.
 
 - [ ] **Step 1: Write the package manifest and tests**
 
-`Package.swift` must define an executable target named `SubtitleOverlay` and a test target named `SubtitleOverlayTests`, with macOS 13 as the platform floor.
+`Package.swift` must define a library target named `OverlayCore`, an executable target named `SubtitleOverlay` that depends on `OverlayCore`, and a test target named `SubtitleOverlayTests` that depends on `OverlayCore`, with macOS 13 as the platform floor.
 
 The tests must cover a screenshot-inspired default frame, minimum-size enforcement, and clamping a saved frame back onto a visible screen.
 
@@ -48,7 +48,7 @@ Expected: compilation fails because `OverlayGeometry` has not been created yet.
 
 - [ ] **Step 3: Implement the geometry helper**
 
-Implement these exact behaviors:
+Implement these exact behaviors in `OverlayCore`:
 
 ```swift
 enum OverlayGeometry {
