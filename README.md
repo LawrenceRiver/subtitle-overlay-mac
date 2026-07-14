@@ -4,6 +4,12 @@
 
 A tiny macOS overlay that lets you cover native-language subtitles with a black, draggable, resizable, and dismissible bar.
 
+![Tests](https://img.shields.io/badge/tests-3%20passed-2ea44f?logo=swift&logoColor=white)
+[![Platform](https://img.shields.io/badge/platform-macOS-111111?logo=apple&logoColor=white)](https://www.apple.com/macos/)
+[![Swift](https://img.shields.io/badge/Swift-6.3-F05138?logo=swift&logoColor=white)](https://www.swift.org/)
+[![AppKit](https://img.shields.io/badge/UI-AppKit-007AFF)](https://developer.apple.com/documentation/appkit)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 ## 为什么做这个？ / Why?
 
 我自己在看《老友记》、Taylor Swift 相关视频和其他英语内容时，经常想暂时遮住中文字幕，让自己先听英语、读英文字幕，再决定什么时候查看中文。这个小工具就是为这个场景做的：简单、快速，不打断观看。
@@ -116,8 +122,8 @@ open outputs/SubtitleOverlay.app
 
 This tool places a window over the subtitle area; it does not modify, remove, or recognize subtitles inside the video. Some DRM-protected video surfaces and system-level secure interfaces may prevent third-party overlays, which is a macOS limitation.
 
-## 开源说明 / Open-source note
+## 许可证 / License
 
-这是一个公开的个人小项目，欢迎语言学习者试用、提出建议和贡献改进。仓库目前还没有附加许可证；如果你希望将代码用于其他项目，请先联系作者或等待许可证补充。
+这是一个公开的个人小项目，欢迎语言学习者试用、提出建议和贡献改进。本项目使用 MIT License，允许你使用、复制、修改、合并、发布、分发、再许可和销售软件副本，但请保留原作者版权和许可声明。完整条款见 [LICENSE](LICENSE)。
 
-This is a public personal project for language learners. Feedback and improvements are welcome. The repository does not currently include a license; please contact the author before reusing the code in another project until a license is added.
+This is a public personal project for language learners. Feedback and improvements are welcome. The project is released under the MIT License, which permits use, copying, modification, merging, publishing, distribution, sublicensing, and sale of copies, provided that the original copyright and permission notice are retained. See [LICENSE](LICENSE) for the full text.
