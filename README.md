@@ -51,7 +51,7 @@ These screenshots come from videos I watch and are included only to demonstrate 
       Cover the subtitle area while watching <em>Friends</em>.
     </td>
     <td width="50%">
-      <strong>2. 适用于 Taylor Swift 视频</strong><br>
+      <strong>2. 适用于 Taylor Swift 视频（是霉粉哈哈常看，谢谢ted演讲up主）</strong><br>
       Use the same overlay with a different video and subtitle layout.
     </td>
   </tr>
